@@ -11,10 +11,9 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('submenus', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->unsignedBigInteger('menu_id');
-
             $table->foreign('menu_id')->references('id')->on('menus')->cascadeOnUpdate()->restrictOnDelete();
-
             $table->timestamps();
         });
     }
