@@ -40,39 +40,41 @@
                         <a href="index.html" class="sticky-logo"><img src="{{asset('frontend/img/logo.png')}}" alt=""/></a>
                     </div>
                 </div>	
-                <!-- Logo End -->
 
-            
-                <!-- Main Menu Start -->
+                @php
+                 $menus = App\Models\Menu::all();
+                 $submenus = App\Models\Submenu::all();
+                @endphp
+
                 <div class="mobile-nav-menu"></div>						
                 <div class="col-md-9 col-sm-9 nav-menu">
                     <div class="menu">
                         <nav id="main-menu" class="main-menu">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li> 									
-                                <li><a href="#">About Us</a></li> 														
-                                <li><a href="#">Products</a>
-                                    <ul>
-                                        <li><a href="#">HEAT TRANSFER LABELS </a></li>
-                                        <li><a href="#">ALL KINDS OF GARMENTS LABEL </a></li>
-                                        <li><a href="#">Hang Tag</a></li>
-                                        <li><a href="#">OFFSET ITEMS </a></li>
-                                    </ul>								
-                                </li>								
-                                        
-                                <li><a href="#">Facilities</a></li> 						
-                                <!--<li><a href="#">Graphics Design</a></li> 						-->
-                                <li><a href="#">Photo Gallery</a></li> 						
-                                <li><a href="#">Certifications</a></li> 	
 
-                                <li><a href="#">Contact</a></li> 											
-                            
+                                @foreach($menus as $menu)
+                                
+                                <li><a href="{{ $menu->url }}">{{ $menu->name }}</a>								
+
+                                @if(count($menu->submenus))
+
+                                    <ul>
+                                        
+                                        @foreach($menu->submenus as $submenu)
+                                        <li><a href="{{ $submenu->url }}">{{ $submenu->name }}</a></li>
+                                        @endforeach
+                                        
+                                    </ul>								
+                                
+                                    @endif
+                                </li>												
+                               	@endforeach						
                                 
                             </ul>
                         </nav>
                     </div>					
                 </div>	
-                <!-- Main Menu End -->
+
             </div>
         </div>
     </div>

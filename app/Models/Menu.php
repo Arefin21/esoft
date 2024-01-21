@@ -10,6 +10,6 @@ class Menu extends Model {
     protected $fillable = ['name'];
 
     public function submenus() {
-        return $this->hasMany(Submenu::class);
+        return $this->hasMany(Submenu::class, 'menu_id');
     }
 }

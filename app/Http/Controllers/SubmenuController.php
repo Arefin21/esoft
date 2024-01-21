@@ -38,7 +38,7 @@ class SubmenuController extends Controller {
     public function editSubMenu($id) {
         $submenu = Submenu::findOrFail($id);
         $menus = Menu::all();
-        return view('backend.subMenu.edit_sub_menu', compact('menus','submenu'));
+        return view('backend.subMenu.edit_sub_menu', compact('menus', 'submenu'));
     }
 
     public function updateSubMenu(Request $request) {
@@ -58,7 +58,7 @@ class SubmenuController extends Controller {
             'message'    => 'SubMenu Updated Successfully',
             'alert-type' => 'success',
         ];
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.subMenu')->with($notification);
     }
 
     public function DeleteSubMenu($id) {

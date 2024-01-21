@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller {
     public function AllMenu() {
-        $menu = Menu::all();
-        return view('backend.menu.all_menu', compact('menu'));
+        $menus = Menu::all();
+        return view('backend.menu.all_menu', compact('menus'));
     }
 
     public function AddMenu() {

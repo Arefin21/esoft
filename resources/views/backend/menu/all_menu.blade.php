@@ -36,7 +36,7 @@
 
                         <tbody>
                         	@php($i = 1)
-                        	@foreach($menu as $key => $item)
+                        	@foreach($menus as $key => $item)
                         <tr>
                             <td> {{ $i++}} </td>
                             <td>{{$item->name}}</td>
