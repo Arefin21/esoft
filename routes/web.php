@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\SubmenuController;
+use App\Http\Controllers\WhatWeAreAboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,13 @@ Route::controller(SubmenuController::class)->group(function () {
     Route::get('/edit/sub-menu/{id}', 'EditSubMenu')->name('edit.subMenu');
     Route::post('/update/sub-menu', 'UpdateSubMenu')->name('update.subMenu');
     Route::get('/delete/sub-menu/{id}', 'DeleteSubMenu')->name('delete.subMenu');
+});
+
+Route::controller(WhatWeAreAboutController::class)->group(function () {
+    Route::get('/all/about', 'AllAbout')->name('all.about');
+    Route::get('/add/about', 'AddAbout')->name('add.about');
+    Route::post('/store/about', 'StoreAbout')->name('store.about');
+    Route::get('/edit/about/{id}', 'EditAbout')->name('edit.about');
+    Route::post('/update/about', 'UpdateAbout')->name('update.about');
+    Route::get('/delete/about/{id}', 'DeleteAbout')->name('delete.about');
 });

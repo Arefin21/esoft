@@ -58,6 +58,10 @@
                         <i class="ri-vip-crown-2-line"></i>
                         <span>About</span>
                     </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('all.about')}}">All About</a></li>
+                        <li><a href="{{route('add.about')}}">Add About</a></li>
+                    </ul>
                 </li>
 
                 <li>
