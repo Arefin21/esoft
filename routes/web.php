@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubmenuController;
 use App\Http\Controllers\WhatWeAreAboutController;
 use Illuminate\Support\Facades\Route;
@@ -58,4 +59,13 @@ Route::controller(WhatWeAreAboutController::class)->group(function () {
     Route::get('/edit/about/{id}', 'EditAbout')->name('edit.about');
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
     Route::get('/delete/about/{id}', 'DeleteAbout')->name('delete.about');
+});
+
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/all/product', 'AllProduct')->name('all.product');
+    Route::get('/add/product', 'AddProduct')->name('add.product');
+    Route::post('/store/product', 'StoreProduct')->name('store.product');
+    Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
+    Route::post('/update/product', 'UpdateProduct')->name('update.product');
+    Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
 });

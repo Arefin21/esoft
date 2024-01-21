@@ -69,6 +69,10 @@
                         <i class="ri-bar-chart-line"></i>
                         <span>Product Gallary</span>
                     </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('all.product')}}">All Product</a></li>
+                        <li><a href="{{route('add.product')}}">Add Product</a></li>
+                    </ul>
                 </li> 
 
             </ul>

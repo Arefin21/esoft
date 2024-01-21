@@ -18,7 +18,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Edit Meu </h4>
+            <h4 class="card-title">Edit Menu </h4>
             
             <form method="post" action="{{ route('update.banner') }}">
                 @csrf

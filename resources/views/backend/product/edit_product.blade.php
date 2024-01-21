@@ -18,32 +18,32 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Update About </h4>
+            <h4 class="card-title">Update Product </h4>
             
-            <form method="post" action="{{ route('update.about') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('update.product') }}" enctype="multipart/form-data">
                 @csrf
 
                
-                <input type="hidden" name="id" value="{{$abouts->id}}">
+                <input type="hidden" name="id" value="{{$products->id}}">
         
 
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">About Title </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Product Title </label>
                 <div class="col-sm-10">
-                    <input name="title" class="form-control" type="text" value="{{$abouts->title}}" id="example-text-input">
+                    <input name="title" class="form-control" type="text" value="{{$products->title}}" id="example-text-input">
                 </div>
             </div>
 
             
             <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">About Description </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Product Description </label>
                 <div class="col-sm-10">
-                    <textarea name="description" required="" class="form-control" rows="5">{{$abouts->description}}</textarea>
+                    <textarea name="description" required="" class="form-control" rows="5">{{$products->description}}</textarea>
                 </div>
             </div>
 
              <div class="row mb-3">
-                <label for="example-text-input" class="col-sm-2 col-form-label">About Image </label>
+                <label for="example-text-input" class="col-sm-2 col-form-label">Product Image </label>
                 <div class="col-sm-10">
            <input name="image" class="form-control" type="file" id="image">
                 </div>
@@ -54,13 +54,13 @@
               <div class="row mb-3">
                  <label for="example-text-input" class="col-sm-2 col-form-label">  </label>
                 <div class="col-sm-10">
-  <img id="showImage" class="rounded avatar-lg" src="{{ asset($abouts->image) }}" alt="Card image cap">
+  <img id="showImage" class="rounded avatar-lg" src="{{ asset($products->image) }}" alt="Card image cap">
                 </div>
             </div>
           
 
             
-<input type="submit" class="btn btn-info waves-effect waves-light" value="Update About">
+<input type="submit" class="btn btn-info waves-effect waves-light" value="Update Product">
             </form>
              
            
@@ -69,9 +69,6 @@
     </div>
 </div> 
 </div>
- 
-
-
 </div>
 </div>
 
